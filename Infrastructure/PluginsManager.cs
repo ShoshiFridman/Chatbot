@@ -2,6 +2,7 @@
 using CountDown;
 using Counter;
 using CountTheWords;
+using PrintAllTextFromFile;
 using DiceRoller;
 using Echo;
 using ListPlugin;
@@ -49,6 +50,10 @@ namespace Infrastructure
             {
                 return new CountWordPlugin();
             }
+            else if (id == PrintPlugin._Id)
+            {
+                return new PrintPlugin();
+            }
             else
 
             {
@@ -64,7 +69,8 @@ namespace Infrastructure
             EchoPlugin._Id,
             ListPlugin.ListPlugin._Id,
             CountTheWordsPlugin._Id,
-            CountWordPlugin._Id
+            CountWordPlugin._Id,
+            PrintPlugin._Id
         };
     }
 }

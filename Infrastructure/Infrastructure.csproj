@@ -1,8 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FakesAssemblies\**" />
+    <EmbeddedResource Remove="FakesAssemblies\**" />
+    <None Remove="FakesAssemblies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.QualityTools.Testing.Fakes" Version="16.11.230815" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Plugins\CountDown\CountDown.csproj" />
@@ -12,8 +22,13 @@
     <ProjectReference Include="..\Plugins\DiceRoller\DiceRoller.csproj" />
     <ProjectReference Include="..\Plugins\Echo\EchoPlugin.csproj" />
     <ProjectReference Include="..\Plugins\List\ListPlugin.csproj" />
+    <ProjectReference Include="..\PrintAllTextFromFile\PrintAllTextFromFile.csproj" />
     <ProjectReference Include="..\Shared\BasePlugin\BasePlugin.csproj" />
     <ProjectReference Include="..\Shared\Dal\Dal\Dal.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalDesignTimeBuildInput Remove="FakesAssemblies\**" />
   </ItemGroup>
 
 </Project>
